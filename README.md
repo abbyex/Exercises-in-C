@@ -1,7 +1,7 @@
 # Exercises-in-C
 <b>Some of the assignments I was given as part of my degree in ANSI-C</b>
 
-<b>ADTs</b><br />
+<b>ADTs: Hashing</b><br />
 Using a hashing algorithm that searches through text (eg 'Pride and Prejudice ' book) to find specific words. 
 
 <b>Forest Fires</b><br />
