@@ -1,7 +1,7 @@
 # Exercises-in-C
 <b>Some of the assignments I was given as part of my module in ANSI-C</b>
 
-<b>Turtle</b><br />
+<b>Turtle: Parser and Interpreter</b><br />
 Based on ['Turtle Graphics'](https://en.wikipedia.org/wiki/Turtle_graphics), I built a parser and interpreter which could take a set of file instructions such as 'Forward 30, Left 45' and build graphical structures such as the examples below: 
 <p align="center">
   <img src="images/spiral_1.PNG" width="300" alt="Spiral 1"/>
