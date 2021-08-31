@@ -4,7 +4,8 @@
 <b>Turtle</b><br />
 Based off of 'Turtle graphics', I built a parser and interpreter which could take a set of file instructions such as 'Forward 30, Left 45' and build graphical structures such as the examples below: 
 <p align="center">
-  <img src="images/spiral_1.PNG" width="300" alt="Forest fire gif"/>
+  <img src="images/spiral_1.PNG" width="300" alt="Spiral 1"/>
+  <img src="images/spiral_2.PNG" width="300" alt="Spiral 2"/>
 </p>
 
 <p align="center">
