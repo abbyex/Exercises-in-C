@@ -10,15 +10,6 @@ Based off of 'Turtle graphics', I built a parser and interpreter which could tak
 
 <p align="center">
   Spiral #1
-</p>
-<br/>
-<p align="center">
-  <img src="images/spiral_2.PNG" width="300" alt="Forest fire gif"/>
-</p>
-
-<p align="center">
- Spiral #2
-</p>
 
 <b>ADTs: Hashing</b><br />
 Using a hashing algorithm that searches through text (eg 'Pride and Prejudice ' book) to find specific words. 
