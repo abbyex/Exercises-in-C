@@ -1,6 +1,24 @@
 # Exercises-in-C
 <b>Some of the assignments I was given as part of my degree in ANSI-C</b>
 
+<b>Turtle</b><br />
+Based off of 'Turtle graphics', I built a parser and interpreter which could take a set of file instructions such as 'Forward 30, Left 45' and build graphical structures such as the examples below: 
+<p align="center">
+  <img src="images/fire.gif" width="400" alt="Forest fire gif"/>
+</p>
+
+<p align="center">
+  Spiral #1
+</p>
+<br/>
+<p align="center">
+  <img src="images/fire.gif" width="400" alt="Forest fire gif"/>
+</p>
+
+<p align="center">
+ Spiral #2
+</p>
+
 <b>ADTs: Hashing</b><br />
 Using a hashing algorithm that searches through text (eg 'Pride and Prejudice ' book) to find specific words. 
 
