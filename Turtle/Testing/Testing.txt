@@ -1,0 +1,90 @@
+WHITE-BOX TESTING
+Methods used: Assert, boolean functions, and print() statements
+
+#1 Assert testing
+I've used the <assert.h> function to test various aspects of the programme as it
+goes along. These include (and are not limited to):
+
+assert(i<MAXMOVES);
+>> Checks that my array has not overrun it's fixed size.
+
+assert(is_end_bracket(&p) == true);
+>> Checks that the number of starting brackets matches the number of ending brackets.
+
+assert(p.counter == i);
+>> Checks that the number of words read into the file is the same as the number the
+program has counted.
+
+assert(is_start_bracket(p) == true);
+>> Checks for the starting bracket at the beginning, and also checks that the starting
+bracket is at the end of the 'Do' loop, since this is called recursively.
+
+assert(isupper(p->words[p->counter][0]) != false);
+>> Checks in the var() function, that the variable being read is uppercase.
+
+
+#2 Bool functions include:
+I've use several basic bool functions to test whether a part of the grammer is true or not. All these bool functions were tested 
+seperatley in a sudo file using print() statements and assert().
+
+bool is_instr(prog* p);
+>> Checks that it is a valid instruction - either 'FD', 'LT', 'RT', 'DO' or 'SET'.
+
+bool is_num(prog* p);
+>>Checks the number being read is a valid number.
+
+bool is_start_bracket(prog* p);
+>> Checks for the starting bracket.
+
+bool is_end_bracket(prog* p);
+>> Checks for the ending bracket, and checks that the number of ending brackets
+is equal to the starting ones.
+
+bool is_letter(prog* p);
+>> Checks if it is a valid letter.
+
+bool is_lower(prog *p);
+>> Checks if the var is a lowercase letter; if it is, prints out appropriate error
+message.
+
+
+#3 Print statements.
+While I was writing my program, I also used print statements to check if my programme
+was printing out correctly, such as in the appropriate places (Some of these have been commented out, but I've taken out 
+others as it made it look messy):
+
+printf("%s\n", p->words[p->counter]);
+>> Printing the current word being parsed.
+
+printf("%d\n", p->counter);
+>> Printing the number of the word in the file.
+
+printf("%d\n", p->loops);
+>> Printing the number of active 'DO' loops.
+
+
+BLACK-BOX TESTING
+
+#1 FILES
+Versions of files that I've created and tested.
+
+Please refer to the document 'FileTestingOutput.txt' for further descriptions and details of types of files that I tested. 
+An overview of this is:
+
+I tested basic grammar, such as missing/incorrect brackets, instructions or variables.
+I tested files with no new lines, and no spaces. 
+I tested negative numbers, decimal numbers and letters that did not match the variable grammer (such as 'AA')
+I also tested with numbers that are large 
+I tested the 'SET' loop and what happens when grammar here is not written right - missing variables, incorrect placings. 
+I tested the Polish Notation with mutliple letters, operators and numbers (for example, too many operators, or too many numbers/letters).
+I also tested Polish for when there are lots of numbers, and enough operators to match. 
+I tested the 'DO' loop and what happens when this grammar is not correct. 
+I tested for what happens when a letter is not set in the DO loop (passes in my parser, but is set to 0 in my interpreter). 
+I tested for lower case letters, or what happens when I set every variable in the alphabet to something.
+
+
+
+#2 BOOLS
+- All bool functions were tested in a sudo file seperately using basic letters/numbers
+(or what was applicable to the function) read in a file via the command line to ensure
+that they worked before implementing them into my parse file.

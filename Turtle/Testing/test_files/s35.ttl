@@ -1,0 +1,28 @@
+{
+ SET A := 5 1 + ;
+ SET B := A 1 + ;
+ SET C := B 1 + ;
+ SET D := C 1 + ;
+ SET E := A 1 + ;
+ SET F := 3 1 + ;
+ SET G := D 1 + ;
+ SET H := E 1 + ;
+ SET I := F 1 + ;
+ SET J := 5 I + ;
+ SET K := 8 1 + ;
+ SET L := 8 1 + ;
+ SET M := 8 1 + ;
+ SET N := 8 1 + ;
+ SET O := 8 1 + ;
+ SET P := 8 1 + ;
+ SET Q := 8 1 + ;
+ SET R := 8 1 + ;
+ SET S := 8 1 + ;
+ SET T := 8 1 + ;
+ SET U := 8 1 + ;
+ SET V := 8 1 + ;
+ SET W := 8 1 + ;
+ SET X := 8 1 + ;
+ SET Y := 8 1 + ;
+ SET Z := 8 1 + ;
+}

@@ -1,0 +1,7 @@
+{
+   DO A FROM 2.5 TO 7.8 {
+      SET C := A 1.5 * ;
+      FD C
+      RT 62
+   }
+}

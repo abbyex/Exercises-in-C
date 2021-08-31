@@ -1,0 +1,261 @@
+All files were tested with both the Parser and Interpreter. 
+
+BASIC TESTING
+Tested for brackets, spaces, and missing/invalid things.
+
+0 Missing a file - nothing was typed into the command line.
+OUTPUT P: Fatal Error, cannot open file. Occured in parse.c, line 21
+OUTPUT I: Fatal Error, cannot open file. Occured in interp.c, line 37
+
+
+s1.ttl
+- Tested a file just containing '{ }'.
+EXPECTATION: Parsed OK
+OUTPUT P: Parsed OK
+OUTPUT I: Parsed OK
+
+s2.ttl
+- Tested with no new lines, just spaces.
+EXPECTATION: Parsed OK
+OUTPUT P: Parsed OK
+OUTPUT I: Parsed OK
+
+s3.ttl 
+- Tested words all jumbled together - with no spaces.
+EXPECTATION: Parsed OK
+OUTPUT P: Not valid
+OUTPUT I: Not valid
+
+s4.ttl
+- Tested with missing number and letter (eg no num/letter after 'FD')
+EXPECTATION: Not valid
+OUTPUT P: Not valid
+OUTPUT I: Not valid
+
+s5.ttl
+- Tested with a letter, not a number.
+EXPECTATION: Parsed OK - for parser, Not Valid - for Interpreter, as letter has not been SET. 
+OUTPUT P: Parsed OK
+OUTPUT I: Not valid
+
+s6.ttl
+- Tested with invalid letter/number.
+EXPECTATION: Not Valid
+OUTPUT P: Not valid
+OUTPUT I: Not valid
+
+s7.ttl
+- Tested for file missing a starting bracket
+EXPECTATION: Not valid
+OUTPUT P: Not valid
+OUTPUT I: Not valid
+
+s8.ttl
+- Tested for file missing a closing bracket
+EXPECTATION: Not valid
+OUTPUT P: Not valid 
+OUTPUT I: Not valid
+
+s9.ttl
+- Tested a file where the starting bracket != the closing bracket
+EXPECTATION: Not valid 
+OUTPUT P: Not valid
+OUTPUT I: Not valid
+
+
+
+VAR/VARNUM TESTING
+
+s10.ttl
+Tested a file containing solely lowercase letters
+EXPECTATION: Not valid
+OUTPUT P: Not valid
+OUTPUT I: Not valid
+
+s11.ttl
+Tested a file where a var is 'AA' instead of 'A'
+EXPECTATION: Not valid
+OUTPUT P: Not valid
+OUTPUT I: Not valid
+
+s12.ttl
+Tested a file where forward instruct is large 'eg FD 2000'
+EXPECTATION: Parsed OK
+OUTPUT P: Parsed OK
+OUTPUT I: Parsed OK
+
+s13.ttl
+Tested a file where the LT instruct (angle) is large 'eg LT 2000'
+EXPECTATION: Parsed OK
+OUTPUT P: Parsed OK
+OUTPUT I: Parsed OK 
+
+s14.ttl
+Tested a file where the num is negative 'eg FD -40'
+EXPECTATION: Parsed OK
+OUTPUT P: Parsed OK
+OUTPUT I: Parsed OK 
+
+s15.ttl
+Tested a file where the num is a decimal 'eg FD 4.5'
+EXPECTATION: Parsed OK 
+OUTPUT P: Parsed OK
+OUTPUT I: Parsed OK 
+
+
+
+SET LOOP TESTING
+
+s16.ttl
+Tested file when 'SET' is missing polish instructions
+EXPECTATION: Parsed OK 
+OUTPUT P: Parsed OK
+OUTPUT I: Parsed OK 
+
+s17.ttl
+Tested file with too many operaters in Polish notation - eg ' * / 4'
+EXPECTATION: Parsed OK - for parser (does not specify in grammar about no. of operators), Not Valid - for Interpreter
+OUTPUT P: Parsed OK
+OUTPUT I: Not valid
+
+s18.ttl
+Tested a file with too many numbers compared to operators eg ' 6 4 5 *'
+EXPECTATION: Parsed OK - for parser (does not specify in grammar about no. of operators), Not Valid - for Interpreter
+OUTPUT P: Parsed OK
+OUTPUT I: Not Valid
+
+s19.ttl
+Tested a file where 'SET' is missing the end ';'
+EXPECTATION: Not valid
+OUTPUT P: Not Valid 
+OUTPUT I: Not valid
+
+s20.ttl
+Tested a file where 'SET' has than 3 numbers and 2 operators. 
+EXPECTATION: Parsed OK
+OUTPUT P: Parsed OK
+OUTPUT I: Parsed OK
+
+s21.ttl
+Tested a file where 'SET' is missing ':='
+EXPECTATION: Not valid
+OUTPUT P: Not valid
+OUTPUT I: Not valid
+
+s22.ttl
+Tested file with too many ':=' in 'SET' eg 'SET C := :='
+EXPECTATION: Not valid
+OUTPUT P: Not valid
+OUTPUT I: Not Valid
+
+s23.ttl
+Tested a file where one of the Polish variables is negative
+EXPECTATION: Parsed OK
+OUTPUT P: Parsed OK
+OUTPUT I: Parsed OK
+
+s24.ttl
+Tested a file where one of the Polish variables is a decimal
+EXPECTATION: Parsed OK
+OUTPUT P: Parsed OK
+OUTPUT I: Parsed OK
+
+s25.ttl
+Tested a file where one of the Polish variables is a letter, that has not been set yet.
+EXPECTATION: Parsed OK - for parser, Not Valid - for Interpreter, as letter has not been SET.
+OUTPUT P: Parsed OK
+OUTPUT I: Not Valid
+
+
+
+DO LOOP TESTING
+
+s26.ttl
+Tested a file where it's missing 'DO' at the start
+EXPECTATION: Not Valid
+OUTPUT P: Not Valid 
+OUTPUT I: Not Valid 
+
+s27.ttl
+Tested a file where it's a number instead of 'DO <VAR>'
+EXPECTATION: Not Valid
+OUTPUT P: Not Valid 
+OUTPUT I: Not Valid 
+
+s28.ttl
+Tested a file where the DO loop is set to a large number - eg 1 to 5000
+EXPECTATION: Parsed OK 
+OUTPUT P: Parsed OK 
+OUTPUT I: Parsed OK
+
+s29.ttl
+Tested a file where the DO loop is set to a letter eg 'DO B from A to 5' (and letter is set)
+EXPECTATION: Parsed OK
+OUTPUT P: Parsed OK
+OUTPUT I: Parsed OK
+
+s30.ttl
+Tested a file where the DO loop is set to a letter eg 'DO B from A to 5' (and letter is not set)
+EXPECTATION: Parsed OK - for parser, Not Valid - for Interpreter, as letter has not been SET.
+OUTPUT P: Parsed OK
+OUTPUT I: Not valid
+
+s31.ttl
+Tested a file where the DO loop is set to a negative number
+EXPECTATION: Parsed OK 
+OUTPUT P: Parsed OK
+OUTPUT I: Parsed OK
+
+s32.ttl
+Tested a file where the DO loop is set to a decimal number
+EXPECTATION: Parsed OK
+OUTPUT P: Parsed OK
+OUTPUT I: Parsed OK
+
+s33.ttl
+Tested a file where the DO loop is missing the closing '{'
+EXPECTATION: Not Valid
+OUTPUT P: Not Valid
+OUTPUT I: Not Valid
+
+
+
+INTERPRETER TESTING
+
+MISCELL
+
+s34.ttl
+Tested a file where a variable hasn't been set yet
+EXPECTATION: Parsed OK - for parser, Not Valid - for Interpreter, as letter has not been SET.
+OUTPUT P: Parsed OK 
+OUTPUT I: Not valid 
+
+s35.ttl
+Tests what happens if I set all the letters in the alphabet. 
+EXPECTATION: Parsed OK  
+OUTPUT P: Parsed OK 
+OUTPUT I: Parsed OK 
+
+
+NEILL'S TESTS
+Tested Neill's example files off of Github.
+
+simp.ttl
+EXPECTATION: Parsed OK 
+OUTPUT P: Parsed OK
+OUTPUT I: Parsed OK
+
+simp_c.ttl
+EXPECTATION: Parsed OK 
+OUTPUT P: Parsed OK
+OUTPUT I: Parsed OK
+
+spiral1_c.ttl
+EXPECTATION: Parsed OK 
+OUTPUT P: Parsed OK
+OUTPUT I: Parsed OK
+
+spiral2_c.ttl
+EXPECTATION: Parsed OK 
+OUTPUT P: Parsed OK
+OUTPUT I: Parsed OK

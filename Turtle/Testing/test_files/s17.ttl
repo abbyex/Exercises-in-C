@@ -1,0 +1,7 @@
+{
+   DO A FROM 1 TO 10 {
+      SET C := * / 4 ;
+      FD C
+      RT 62
+   }
+}

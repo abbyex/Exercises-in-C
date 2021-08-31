@@ -1,0 +1,38 @@
+EXTENSION .TXT
+
+For my extension, instead of reading in a file, the user has the option to type the instructions into the command line. 
+The grammar was slightly modified to allow for easier use in this way: I took out the '{' and when the user is finished with the program
+they can type 'END' and their image will appear in SDL. 
+I also include line-specific errors so that if there is a mistake in the grammar, the user can re-run and fix the mistake, according to
+the appropriate line number (the programme prints the line number as 'Line 0: Next Instruction?').
+If the user types 'FORWARD' or 'BACK' into the instructions, the line number will jump forwards or back 1 instruction, as appropriate.
+For example, if they made a mistake, they could just type 'BACK' and it would take them back to their previous instruction. 
+
+Note that the grammar has also been modified to include a new line character, signifiying when the user would have to press 'enter' for 
+the next instruction. (For simplicity sake this would normally be where one would assume seperation of instructions, but please refer
+to the below grammar).
+
+Slightly modified grammar:
+
+<MAIN> ::= <INSTRCTLST>
+<INSTRCTLST> ::= <INSTRUCTION><INSTRCTLST> |
+"END" "\n"
+<INSTRUCTION> ::= <FD>|
+<LT> |
+<RT> |
+<DO> |
+<SET>
+<FD> ::= "FD" "\n" <VARNUM> 
+<LT> ::= "LT" "\n" <VARNUM> 
+<RT> ::= "RT" "\n" <VARNUM> 
+<DO> ::= "DO" "\n" <VAR> "FROM" "\n" <VARNUM> "TO" "\n"
+<VARNUM> <INSTRCTLST>
+<VAR> ::= [A−Z] "\n"
+<VARNUM> ::= number "\n" | <VAR>
+<SET> ::= "SET" "\n" <VAR> ":=" "\n" <POLISH> 
+<POLISH> ::= <OP> <POLISH> | <VARNUM> <POLISH> | ";" "\n"
+<OP> ::= "+" "\n" | "−" "\n" | "*" "\n" | "/" "\n"
+"BACK" "\n" ::= <INSTRCTLST> - 1
+"FORWARD" "\n" ::= <INSTRCTLST> + 1
+
+
