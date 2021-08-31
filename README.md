@@ -7,7 +7,7 @@
 Creating a 
 
 <p align="center">
-  <img src="images/fire.gif" width="100" alt="Forest fire gif"/>
+  <img src="images/fire.gif" width="400" alt="Forest fire gif"/>
 </p>
 
 <p align="center">
