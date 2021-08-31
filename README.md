@@ -1,7 +1,8 @@
 # Exercises-in-C
 <b>Some of the assignments I was given as part of my degree in ANSI-C</b>
 
-<b>ADTs</b>
+<b>ADTs</b><br />
+Using a hashing algorithm that searches through text (eg 'Pride and Prejudice ' book) to find specific words. 
 
 <b>Forest Fires</b><br />
 Creating a terminal stimulation of a 'Forest fire' following a set of logical rules given to us in the assignment based on how the fire behaves, and what creates tree growth (see gif below). The @'s represent trees, and the \*'s represent fire. 
