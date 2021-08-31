@@ -4,7 +4,7 @@
 <b>ADTs</b>
 
 <b>Forest Fires</b>
-Creating a 
+Creating a terminal stimulation of a 'Forest fire' following a set of logical rules given to us in the assignment based on how the fire behaves, and what creates tree growth (see gif below). The @'s represent trees, and the \*'s represent fire. 
 
 <p align="center">
   <img src="images/fire.gif" width="400" alt="Forest fire gif"/>
