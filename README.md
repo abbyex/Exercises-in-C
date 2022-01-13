@@ -1,5 +1,5 @@
 # Exercises-in-C
-<b>Some of the assignments I was given as part of my module in ANSI-C</b>
+<b>Some of the assignments I was given as part of my module in C</b>
 
 <b>Turtle: Parser and Interpreter</b><br />
 Based on ['Turtle Graphics'](https://en.wikipedia.org/wiki/Turtle_graphics), I built a parser and interpreter which could take a set of file instructions such as 'Forward 30, Left 45' and build graphical structures such as the examples below: 
